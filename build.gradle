@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.2'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'de.clashsoft.angular-gradle' version '0.2.0'
 }
 
 group = 'fr.eni.encheres'
@@ -38,6 +39,13 @@ dependencies {
 	
 	runtimeOnly 'com.h2database:h2'
 }
+
+task buildAngularCustom(type: Exec) {
+    workingDir '/src/main/resources/frontend.angular-app.Eni-Enchere'
+    commandLine 'npm', 'build', '--configuration="development"'
+}
+
+processResources.dependsOn buildAngularCustom
 
 tasks.named('test') {
 	useJUnitPlatform()
