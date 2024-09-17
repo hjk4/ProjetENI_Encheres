@@ -45,19 +45,18 @@ public class ArticleAVendre {
 	
 	@Column(name = "prix_vente")
 	private Integer prixVente;
-	// TODO Delete the cascade types
+
 	// Associations
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE } ) //Cascade for testing purposes
+	@OneToOne
 	@JoinColumn(name = "id_utilisateur", nullable = false)
 	private Utilisateur vendeur;
 	
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE } ) //Cascade for testing purposes
+	@OneToOne
 	@JoinColumn(name = "no_categorie", nullable = false)
 	private Categorie categorie;
 	
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE } ) //Cascade for testing purposes
+	@OneToOne
 	@JoinColumn(name = "no_adresse_retrait", nullable = false)
 	private Adresse adresse;
-	
 	
 }

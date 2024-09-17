@@ -2,7 +2,6 @@ package fr.eni.encheres.bo;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -23,15 +22,14 @@ import lombok.*;
 @Table(name = "ENCHERES")
 @IdClass(EnchereId.class)
 public class Enchere {
-	// TODO Delete the cascade types
 	// Associations
 	@Id
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE } ) //Cascade for testing purposes
+	@OneToOne
 	@JoinColumn(name = "id_utilisateur", nullable = false)
 	private Utilisateur acquereur;
 	
 	@Id
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE } ) //Cascade for testing purposes
+	@OneToOne
 	@JoinColumn(name = "no_article", nullable = false)
 	private ArticleAVendre articleAVendre;
 	
