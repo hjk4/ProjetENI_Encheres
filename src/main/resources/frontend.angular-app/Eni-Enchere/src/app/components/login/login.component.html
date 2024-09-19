@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class=" container mx-auto flex items-center justify-center" style="width: 80vw; height: 80vh;">
+  <div class="">
+    <div class="py-10">
+      <div class="py-5 ">
+        <form method="post" action="/eniEnchere/connexion" id="login">
+          <div class="py-3 flex justify-between">
+            <label class="" for="identifiant">Identifiant : </label>
+            <input class="border-black border-2 mx-3" id="identifiant" name="identifiant" type="text">
+          </div>
+          <div class="py-3 flex justify-between">
+            <label class="" for="mdp">Mot de passe : </label>
+            <input class="border-black border-2 mx-3" id="mdp" name="motDePasse" type="password">
+          </div>
+        </form>
+      </div>
+      <div class="flex justify-between ">
+        <button class="border-black border-2 py-3 px-5 font-sans font-medium text-lg" type="submit" form="login">Connexion</button>
+        <div class="flex flex-col justify-end">
+          <a href="#">Mot de passe oublié</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center font-sans font-medium text-lg">
+      <button class="border-black border-2 py-3 px-24 shadow-2xl" routerLink="/account-creation">Créer un compte</button>
+    </div>
+  </div>
+</div>
